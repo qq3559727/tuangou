@@ -1,0 +1,46 @@
+{extend name='common/index_base' /}
+{block name='title'}{$web_name}{/block}
+{block name='seoDescription'}{$seo_description}{/block}
+{block name='seoKeywords'}{$seo_keywords}{/block}
+{block name='body'}
+<section class="blog-page-1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-page-header">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    {volist name='posts' id='post'}
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="blog-post">
+                            
+                            <div class="blog-details">
+                                
+                                <a href="{:url('index/index/show',['id'=>$post->id])}"><h4 class="media-heading">{$post->title}</h4></a>
+                                <ul class="list-inline blog-item-links">
+                                    <li class="list-inline-item"><a href="#"><i class="ion ion-calendar"></i>{$post->create_time}</a></li>
+                                    <li class="list-inline-item"><a href="#"><i class="ion ion-chatbubbles"></i>{$post->comment()->count()}</a></li>
+                                </ul>
+                                <p>{:mb_substr($post->content,0,130)}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                
+                    {$posts->render()}
+                
+            </div>
+        </div>
+    </div>
+</section>
+{/block}
