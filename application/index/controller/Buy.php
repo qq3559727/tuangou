@@ -1,11 +1,11 @@
 <?php
 namespace app\index\controller;
 
-class Index
+class Buy
 {
-    public function index()
-    {
-        
+
+    public function index(){
+
         return view('');
     }
 }
