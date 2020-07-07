@@ -33,3 +33,5 @@ route::get('/register','index/register/index');
 // 后台
 route::get('/admin','admin/index/index');
 route::get('/admin/welcome','admin/index/welcome');
+route::get('/admin/category','admin/category/index');
+route::get('/admin/category/add','admin/category/add');
