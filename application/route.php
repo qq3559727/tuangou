@@ -24,6 +24,12 @@ use think\Route as route;
 
 // 前台
 route::get('/','index/index/index');
+route::get('/buy','index/buy/index');
+route::get('/detail','index/detail/index');
+route::get('/lists','index/lists/index');
+route::get('/login','index/login/index');
+route::get('/register','index/register/index');
 
 // 后台
 route::get('/admin','admin/index/index');
+route::get('/admin/welcome','admin/index/welcome');

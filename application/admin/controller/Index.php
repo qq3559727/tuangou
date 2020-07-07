@@ -6,10 +6,10 @@ class Index{
 
     public function index(){
 
-        $build = include APP_PATH.'build.php';
-        \think\Build::run($build);
-        // return $build;
-        // return APP_PATH.'build.php';
+        return view('');
         
+    }
+    public function welcome(){
+        return '欢迎来到团购商城后台主页面';
     }
 }

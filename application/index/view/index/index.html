@@ -1,6 +1,24 @@
 
 {extend name='common/base' /}
 
+{block name='title'}团购商城{/block}
+{block name='description'}团购商城{/block}
+{block name='keywords'}团购,商城{/block}
+{block name='style'}
+    <link rel="stylesheet" href="__index_css__/base.css" />
+    <link rel="stylesheet" href="__index_css__/common.css" />
+    <link rel="stylesheet" href="__index_css__/index.css" />
+    <script type="text/javascript" src="__index_js__/html5shiv.js"></script>
+    <script type="text/javascript" src="__index_js__/respond.min.js"></script>
+    <script type="text/javascript" src="__index_js__/jquery-1.11.3.min.js"></script>
+{/block}
+{block name='body'}
+
+<div class="search">
+    <img src="__index_img__/logo.png" />
+    
+</div>
+
 <div class="nav-bar-header">
     <div class="nav-inner">
         <ul class="nav-list">
@@ -1182,3 +1200,4 @@
         time = setInterval(moveleft,5000);
     });
 </script>
+{/block}

@@ -1,0 +1,64 @@
+{extend name='common/base' /}
+{block name='title'}注册{/block}
+{block name='description'}{/block}
+{block name='keywords'}{/block}
+{block name='style'}
+    <link rel="stylesheet" href="__index_css__/base.css" />
+    <link rel="stylesheet" href="__index_css__/register.css" />
+    <script type="text/javascript" src="__index_js__/html5shiv.js"></script>
+    <script type="text/javascript" src="__index_js__/respond.min.js"></script>
+    <script type="text/javascript" src="__index_js__/jquery-1.11.3.min.js"></script>
+{/block}
+{block name='header'}{/block}
+{block name='body'}
+<div class="wrapper">
+    <div class="head">
+        <ul>  
+            <li><a href="index.html"><img src="__index_img__/logo.png" alt="logo"></a></li>
+            <li class="divider"></li>
+            <li><a href="index.html"></a></li>
+        </ul>
+        <div class="login-link">
+            <span>我已注册，现在就</span>
+            <a href="{:url('/login')}">登录</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <form>
+            <p class="pass-form-item">
+                <label class="pass-label">用户名</label>
+                <input type="text" name="userName" class="pass-text-input" placeholder="请设置用户名">
+            </p>
+            <p class="pass-form-item">
+                <label class="pass-label">邮箱号</label>
+                <input type="text" name="email" class="pass-text-input" placeholder="可用于接受团购券账号和密码便于消费">
+            </p>
+            
+            <p class="pass-form-item">
+                <label class="pass-label">密码</label>
+                <input type="text" name="password" class="pass-text-input" placeholder="请设置登录密码">
+            </p>
+            <p class="pass-form-item">
+                <label class="pass-label">确认密码</label>
+                <input type="text" name="password" class="pass-text-input" placeholder="请设置登录密码">
+            </p>
+            <p class="pass-form-item">
+                <label class="pass-label">验证码</label>
+                <input type="text" name="verifyCode" class="pass-text-input " placeholder="请输入验证码">
+            </p>
+            
+            <p class="pass-form-item">
+                <input type="submit" value="注册" class="pass-button">
+            </p>
+        </form>
+       
+    </div>
+
+    <div class="foot">
+        <div>
+            <div>qq3559727</div>
+        </div>
+    </div>
+</div>
+{/block}

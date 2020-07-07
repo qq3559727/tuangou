@@ -138,6 +138,7 @@ return [
         '__admin_css__'=>'static/admin/css',
         '__admin_js__'=>'static/admin/js',
         '__admin_img__'=>'static/admin/img',
+        '__admin_hui__'=>'static/admin/hui',
     ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',

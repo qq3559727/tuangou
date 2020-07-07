@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>首页</title>
+    <title>{block name='title'}{/block}</title>
+    <meta name="description" content="{block name='description'}{/block}">
+    <meta name="keywords" content="{block name='keywords'}{/block}">
     <link rel="shortcut icon" href="">
-    <link rel="stylesheet" href="__index_css__/base.css" />
-    <link rel="stylesheet" href="__index_css__/common.css" />
-    <link rel="stylesheet" href="__index_css__/index.css" />
-    <script type="text/javascript" src="__index_js__/html5shiv.js"></script>
-    <script type="text/javascript" src="__index_js__/respond.min.js"></script>
-    <script type="text/javascript" src="__index_js__/jquery-1.11.3.min.js"></script>
+    {block name='style'}{/block}
 </head>
 <body>
+    {block name='header'}
     <div class="header-bar">
         <div class="header-inner">
             <ul class="father">
@@ -52,11 +50,7 @@
             </ul>
         </div>
     </div>
-
-    <div class="search">
-        <img src="__index_img__/logo.png" />
-        
-    </div>
+    {/block}
 
     {block name='body'}
     {/block}
