@@ -6,4 +6,5 @@ use think\Model;
 class Category extends Model
 {
 
+    protected $autoWriteTimestamp = true;
 }
