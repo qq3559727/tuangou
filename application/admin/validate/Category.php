@@ -18,6 +18,8 @@ class Category extends Validate{
     protected $scene = [
         // 注册
         'add'=>['name','parent_id'],
+        //更新
+        'update'=>['name','id','parent_id','status'],
         // 排序
         'listorder'=>['id','listorder'],
     ];

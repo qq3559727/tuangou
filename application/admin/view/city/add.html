@@ -2,22 +2,27 @@
 {include file="public/header" /}
 <body>
 <div class="page-container">
-	<form class="form form-horizontal form-o2o-add" id="form-o2o-add" method="post" action="{:url('admin/category/save')}">
+	<form class="form form-horizontal form-o2o-add" id="form-o2o-add" method="post" action="{:url('admin/city/save')}">
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类名称：</label>
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>中文名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" value="" placeholder="" id="name" name="name">
-				<input type="hidden" class="input-text" value="0" placeholder=""  name="status">
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>英文名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="name" name="uname">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>城市级别：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<span class="select-box">
 				<select name="parent_id" class="select">
-					<option value="0">一级分类</option>
-					{volist name='data' id='vo'}
-					<option value="{$vo.id}">--{$vo.name}</option>
+					<option value="0">一级城市</option>
+					{volist name='res' id='vo'}
+					<option value="{$vo.id}">--{$vo.name}|{$vo.uname}</option>
 					{/volist}
 				</select>
 				</span>

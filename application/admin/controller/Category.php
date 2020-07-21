@@ -114,12 +114,18 @@ class Category extends Controller
         }
     }
 
+    /**
+     * del function
+     * 分类删除
+     * @Author QZW 3559727@qq.com
+     * @DateTime 2020-07-20
+     * @return void
+     */
     public function del(){
 
         $data = input('');
         $r = CategoryModel::where('parent_id','=',$data['id'])->where('parent_id<>0')->where('status<>-1')->select();
         if(empty($r)){
-            dump($r);
             $data['status'] = -1;
             $res = CategoryModel::update($data);
             if($res===false){
@@ -129,6 +135,44 @@ class Category extends Controller
             }
         }else{
             $this->error('包含子类，删除失败！');
+        }
+        
+    }
+
+    /**
+     * edit function
+     * 分类修改页面
+     * @Author QZW 3559727@qq.com
+     * @DateTime 2020-07-20
+     * @return void
+     */
+    public function edit(){
+
+        $id = input('id/d');
+        $data = CategoryModel::where('parent_id=0')->where('status=1')->where('id','<>',$id)->order('id DESC')->select();
+        $edit = CategoryModel::get($id);
+        if($edit===false){
+            $this->error('操作错误！');
+        }
+        return view('',compact('edit','data'));
+    }
+
+    /**
+     * update function
+     * 分类修改
+     * @Author QZW 3559727@qq.com
+     * @DateTime 2020-07-20
+     * @return void
+     */
+    public function update(){
+
+        $validate = validate('category');
+        !$validate->scene('update')->check(input('')) && $this->error($validate->getError());
+        $res = CategoryModel::update(input(''));
+        if($res===false){
+            $this->error('更新失败！');
+        }else{
+            $this->success('更新成功！');
         }
         
     }
